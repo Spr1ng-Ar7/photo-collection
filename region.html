@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="rp">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>手记 · 枭潼摄影作品集</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&family=Noto+Serif+SC:wght@300;400;600&family=Noto+Sans+SC:wght@300;400&family=Ma+Shan+Zheng&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="region-page">
+
+<div id="grain" aria-hidden="true"></div>
+
+<header id="rbar">
+  <a class="r-back" id="rBack" href="index.html">←&thinsp;返回轮盘 <span>BACK&nbsp;TO&nbsp;THE&nbsp;WHEEL</span></a>
+  <p class="r-crumb" id="rCrumb"></p>
+  <div class="r-actions">
+    <button class="r-edit" id="rEdit" type="button">编辑照片 <span>EDIT</span></button>
+    <button class="r-card-top" id="rCardTop" type="button">✉&thinsp;明信片 <span>POSTCARD</span></button>
+  </div>
+</header>
+
+<!-- 头版：签名图 + 地区名 -->
+<section class="r-hero">
+  <div class="r-hero-bg" id="rHeroBg"></div>
+  <div class="r-hero-shade"></div>
+  <div class="r-hero-content">
+    <p class="r-eyebrow" id="rEyebrow"></p>
+    <h1 class="r-cn" id="rCn"></h1>
+    <p class="r-en" id="rEn"></p>
+    <p class="r-line" id="rLine"></p>
+  </div>
+  <div class="r-scroll"><span></span>阅读手记 · SCROLL</div>
+</section>
+
+<!-- 手记 + 照片流（js/region.js 生成） -->
+<main class="r-flow" id="rFlow"></main>
+
+<footer class="r-foot">
+  <button class="r-foot-card" id="rCardBottom" type="button">把这里寄出去<em>MAKE&nbsp;A&nbsp;POSTCARD</em></button>
+  <nav class="r-pn">
+    <a id="rPrev" class="r-pn-link prev"></a>
+    <a id="rNext" class="r-pn-link next"></a>
+  </nav>
+  <p class="r-credit">© 2026 XIAO TONG · 本集影像为占位示例，将陆续替换为实拍作品</p>
+</footer>
+
+<script src="js/data.js?v=6"></script>
+<script src="js/region.js?v=4"></script>
+<script src="js/postcard.js?v=2"></script>
+<script src="js/photoedit.js?v=1"></script>
+</body>
+</html>

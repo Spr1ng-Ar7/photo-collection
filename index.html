@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>枭潼 · 摄影作品集 — XIAO TONG Photography Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&family=Noto+Serif+SC:wght@300;400;600&family=Noto+Sans+SC:wght@300;400&family=Ma+Shan+Zheng&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="grain" aria-hidden="true"></div>
+
+<header id="topbar">
+  <a class="brand" href="#" data-goto="0">枭潼 <span>XIAO TONG</span></a>
+  <p class="top-hint">个人摄影作品集 · PHOTOGRAPHY ATLAS</p>
+</header>
+
+<nav id="dial" aria-label="场景导航">
+  <div class="dial-disc" id="dialDisc">
+    <div class="dial-face"></div>
+    <div class="dial-ticks"></div>
+    <!-- 幕名由 js/dial.js 注入 -->
+  </div>
+  <div class="dial-grip" id="dialGrip" title="拖动轮盘"></div>
+  <div class="dial-pointer" aria-hidden="true"><b id="dialNum">01</b><i></i></div>
+</nav>
+
+<main id="stage">
+
+  <!-- ① 开场 · 冰川 + 雾化擦除 -->
+  <section class="scene" id="scene-hero">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">A PHOTOGRAPHY ATLAS · 影像漫游集</p>
+      <h1 class="hero-name">枭&nbsp;潼</h1>
+      <p class="hero-en">XIAO&nbsp;TONG</p>
+      <p class="hero-tag">以光为笔，以影为墨<br><span>Collecting light at the edge of the world.</span></p>
+    </div>
+    <canvas id="fog"></canvas>
+    <p class="fog-hint" id="fogHint">轻 抚 冰 霜<em>DRAG&nbsp;TO&nbsp;REVEAL</em></p>
+    <div class="scroll-cue" id="scrollCue"><span></span>向下滚动 · SCROLL</div>
+  </section>
+
+  <!-- ② 个人介绍 -->
+  <section class="scene" id="scene-about">
+    <div class="about-wrap">
+      <div class="about-text">
+        <p class="eyebrow">ABOUT · 关于</p>
+        <h2 class="about-title">把世界折叠进<br>取景框<span class="dot">.</span></h2>
+        <p class="about-en">Folding the world into a viewfinder.</p>
+        <p class="about-p">二〇一九年起，我开始带着相机旅行。从冰岛的黑沙滩到重庆的崖壁灯火，从极圈内的极光到两江交汇的夜色——快门，是我与世界对话的方式。</p>
+        <p class="about-p">我偏爱冷调的画面：雾、冰川、海，与深夜的城。它们安静，却有力量。</p>
+        <p class="about-p en">Since 2019 I have been travelling with a camera — from the black beaches of Iceland to the neon cliffs of Chongqing. I am drawn to cold tones: fog, glaciers, the sea, and cities late at night. Quiet, yet powerful.</p>
+        <ul class="about-stats">
+          <li><b>12</b><span>国家与地区<br>REGIONS</span></li>
+          <li><b>20,000<i>+</i></b><span>次快门<br>SHUTTERS</span></li>
+          <li><b>3</b><span>大洲<br>CONTINENTS</span></li>
+        </ul>
+      </div>
+      <figure class="about-photo">
+        <div class="tape"></div>
+        <img id="aboutImg" alt="摄影师的行囊" loading="lazy">
+        <figcaption>行囊中的一切 · <span>what's in the bag</span></figcaption>
+      </figure>
+    </div>
+    <div class="scene-num">01</div>
+  </section>
+
+  <!-- ③ EUROPE 轮盘 -->
+  <section class="scene wheel-scene" id="scene-europe" data-group="europe">
+    <div class="wheel-bg" data-bg-a></div>
+    <div class="wheel-bg" data-bg-b></div>
+    <div class="wheel-shade"></div>
+
+    <div class="wheel-side">
+      <p class="eyebrow light">CHAPTER 01 · EUROPE</p>
+      <h2 class="wheel-title">欧陆拾遗</h2>
+      <p class="wheel-hint">拖动轮盘 · DRAG&nbsp;THE&nbsp;WHEEL<br>点击高亮项进入相册</p>
+    </div>
+
+    <div class="wheel" id="wheelEurope" aria-label="欧洲国家轮盘">
+      <div class="wheel-ring"></div>
+      <div class="wheel-center"></div>
+    </div>
+
+    <div class="region-panel" id="panelEurope">
+      <p class="region-cn"></p>
+      <h3 class="region-en"></h3>
+      <p class="region-line"></p>
+      <p class="region-count"></p>
+      <button class="enter-btn" type="button">进入相册<em>ENTER&nbsp;ALBUM</em></button>
+    </div>
+    <div class="scene-num">02</div>
+  </section>
+
+  <!-- ④ CHINA 轮盘 -->
+  <section class="scene wheel-scene" id="scene-china" data-group="china">
+    <div class="wheel-bg" data-bg-a></div>
+    <div class="wheel-bg" data-bg-b></div>
+    <div class="wheel-shade"></div>
+
+    <div class="wheel-side">
+      <p class="eyebrow light">CHAPTER 02 · CHINA</p>
+      <h2 class="wheel-title">山城与港岛</h2>
+      <p class="wheel-hint">夜色专题 · NIGHT&nbsp;CITIES<br>点击高亮项进入相册</p>
+    </div>
+
+    <div class="wheel" id="wheelChina" aria-label="中国城市轮盘">
+      <div class="wheel-ring"></div>
+      <div class="wheel-center"></div>
+    </div>
+
+    <div class="region-panel" id="panelChina">
+      <p class="region-cn"></p>
+      <h3 class="region-en"></h3>
+      <p class="region-line"></p>
+      <p class="region-count"></p>
+      <button class="enter-btn" type="button">进入相册<em>ENTER&nbsp;ALBUM</em></button>
+    </div>
+    <div class="scene-num">03</div>
+  </section>
+
+  <!-- ⑤ 结尾 -->
+  <section class="scene" id="scene-end">
+    <div class="end-wrap">
+      <p class="eyebrow light">EPILOGUE · 尾声</p>
+      <h2 class="end-title">旅途未止<span class="dot">.</span></h2>
+      <p class="end-en">TO&nbsp;BE&nbsp;CONTINUED</p>
+      <p class="end-p">下一程，想去法罗群岛看海崖，想去镰仓看海。<br>如果你也喜欢这些画面，欢迎来信聊聊。</p>
+      <ul class="end-links">
+        <li><span>MAIL</span>hello@xiaotong.photo</li>
+        <li><span>INSTAGRAM</span>@xiaotong.lens</li>
+        <li><span>RED</span>@枭潼拾光</li>
+      </ul>
+      <button class="end-card-btn" type="button" id="endCardBtn">做一张明信片<em>MAKE&nbsp;A&nbsp;POSTCARD</em></button>
+      <p class="end-credit">© 2026 XIAO TONG · 本集影像为占位示例，将陆续替换为实拍作品</p>
+    </div>
+    <div class="scene-num">04</div>
+  </section>
+
+</main>
+
+<!-- 翻页相册（全屏浮层） -->
+<div id="album" aria-hidden="true">
+  <div class="album-top">
+    <p class="album-region"><b></b><span></span></p>
+    <p class="album-counter"><b>01</b><i>/</i><span>12</span></p>
+    <button class="album-card" type="button" aria-label="制作明信片">✉&thinsp;明信片<em>POSTCARD</em></button>
+    <button class="album-close" type="button" aria-label="关闭相册">×<em>ESC</em></button>
+  </div>
+  <div class="album-stage" id="albumStage">
+    <div class="page page-under"></div>
+    <div class="page page-top"></div>
+  </div>
+  <p class="album-caption"><b></b><span></span></p>
+  <button class="album-nav prev" type="button" aria-label="上一张">‹</button>
+  <button class="album-nav next" type="button" aria-label="下一张">›</button>
+  <p class="album-hint">拖动或点击两侧翻页 · DRAG&nbsp;OR&nbsp;CLICK&nbsp;TO&nbsp;FLIP</p>
+</div>
+
+<script src="js/data.js?v=6"></script>
+<script src="js/main.js?v=7"></script>
+<script src="js/dial.js?v=1"></script>
+<script src="js/postcard.js?v=2"></script>
+</body>
+</html>
